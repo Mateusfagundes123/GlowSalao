@@ -1,0 +1,556 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+.barraInicialZindex{
+    width: 100%;
+    height: 105px ;
+    position: fixed;
+    z-index: 99;
+}
+.barrabranca{
+    width: 100%;
+    height: 5px;
+    background-color: #fff;
+    
+}
+.barraInicial{
+    width: 100%;
+    height: 100px;
+    background-color: #e5a7da;
+    display: flex;
+   
+}
+.barraInicialParteUm{
+    width: 30%;
+    height: 100px;
+
+}
+.nomeSalao{
+    color: #fff;
+    list-style-type: none;
+}
+.nomeUm{
+    text-transform: uppercase;
+    font-size: 30px;
+    padding-left: 4%;
+    padding-top: 10px;
+}
+.nomedois{
+    font-size: 20px;
+    padding-left: 4%;
+    margin-top: -10px;
+}
+
+
+.barrainicialParteDois{
+    width: 70%;
+    height: 100px;
+}
+.nomeInteracoes li {
+    display: inline-block;
+    font-size: 23px;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative; /* Adiciona posição relativa */
+    padding: 30px 15px; /* Aumenta o padding para ampliar a área de toque */
+    color: #fff;
+}
+
+/* Estilizando o link ao passar o mouse */
+.nomeInteracoes li:hover {
+    color:#FFF; /* Altera a cor para um rosa mais forte */
+}
+
+/* Estilizando o efeito de hover do link */
+.nomeInteracoes li::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #FFF; /* Cor do efeito de hover */
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Exibindo o efeito de hover quando o mouse passa sobre o link */
+.nomeInteracoes li:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+/* Estilizando o link ativo */
+.nomeInteracoes li.active {
+    color: #ff4081; /* Altera a cor do link ativo */
+}
+
+/* Estilizando o efeito de hover do link ativo */
+.nomeInteracoes li.active::before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+.MaeDasCaixas{
+    display: flex;
+}
+.NomeSobreDiv{
+    width: 150px;
+    height: 100px;
+}
+.nomeSobre{
+    color: inherit;
+    text-decoration: none;
+}
+
+.NomeContatoDiv{
+    width: 150px;
+    height: 100px;
+}
+.nomeContato{
+    color: inherit;
+    text-decoration: none;
+}
+
+.NomeEnderecoDiv{
+    width: 150px;
+    height: 100px;
+}
+.nomeEndereco{
+    color: inherit;
+    text-decoration: none;
+}
+
+.NomeProdutosDiv{
+    width: 150px;
+    height: 100px;
+}
+.nomeProdutos{
+    color: inherit;
+    text-decoration: none;
+
+}
+.NomeEntrarDiv{
+    width: 300px;
+    height: 100px;
+}
+.nomeEntrar a{
+    text-decoration: none;
+    color: #Ffff;
+}
+
+/*999999*/
+            
+.TextoEmcimaImagem {
+    position: absolute; 
+    background-image: url(../Img/salao.imagemInicio.png);
+    z-index: 9; 
+    font-size: 50px;
+    border-radius: 50px;
+    padding-top: 350px;
+    padding-left: 600px;
+    margin-top: 250px;
+    margin-left: 170px;
+    background-size: contain; /* Ajusta o tamanho da imagem para que caiba completamente */
+    background-position: center; /* Centraliza a imagem */
+    opacity: 0.9;
+}
+
+/*++++++++++++++++++++++++++*/
+.barraRosa{
+    width: 100%;
+    height: 20px;
+    background-color: #e5a7da;
+}
+.ParteProdutos{
+    width: 100%;
+    height: 350px;
+    background-color: #fff;
+}
+/*+++++++++++++++++++++++++++*/
+.EnglobaFeedBackeCombos{
+    width: 100%;
+    height: 490px;
+    background-color: #FFF;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    
+}
+
+.parteTotalFeedbackECombos{
+    width: 97%;
+    height: 470px;
+    background-color: #e5a7da;
+    border-radius: 50px;
+    color: #FFF;
+    padding-left: 50px;
+}
+
+.divMetede{
+    width: 100%;
+    height: 330px;
+    display: flex;
+}
+.FeedBackClientes{
+    width: 50%;
+    height: 330px;
+}
+
+.CombosOferecidos{
+    width: 50%;
+    height: 330px;
+}
+.RosaMaisForteFeeb{
+    width: 90%;
+    height: 100px;
+    background-color: #DC8ACE;
+    padding-left: 20px;
+    border-radius: 15px;
+    margin-top: 40px;
+}
+.CaixaRozazzaDois{
+    width: 90%;
+    height: 100px;
+    background-color: #DC8ACE;
+    padding-left: 20px;
+    border-radius: 15px;
+    margin-top: 50px;
+    display: flex;
+
+}
+.fontNumber{
+    font-size: 40px;
+    padding-top: 20px;
+    padding-left: 55px; 
+}
+.PFeedBack{
+    font-size: 50px;
+    padding-top: 20px;
+}
+.PAnaMaria{
+    font-size: 25px;
+    align-items: center;
+    display: flex;
+}
+.PDescricao{
+    font-size: 20px;
+}
+.star-rating {
+    display: inline-flex;
+    direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    padding-left: 15px;
+   
+}
+.star-rating label {
+    font-size: 3em;
+    color: #ffffff; 
+    padding: 0 5px;
+}
+.stssss label{
+     font-size: 3em;
+    color: #e5a7da; 
+    padding: 0 5px;
+    padding-top: 14px;
+}
+.servicosOferrecidos{
+    width: 100%;
+    height: 350px;
+    display: flex;
+    margin-top: 65px;
+    margin-left: 10px;
+}
+.cardois{
+    margin-left: 50px;
+}.botaoConferir {
+    width: 180px; 
+    height: 80px;
+    border-radius: 12px; 
+    background-color: #DC8ACE; 
+    border: none; 
+    color: white; 
+    font-size: 20px;
+    margin-left: 60px;
+    margin-top: 120px;
+    text-align: center; 
+    text-transform: uppercase; 
+    cursor: pointer; 
+    
+}
+.botaoConferir:hover {
+    background-color: #C57ABD; /* Cor ao passar o mouse */
+    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+}
+.card {
+    background-color: #fff;
+    width: 250px;
+    height: 340px;
+    border-radius: 12px;
+    box-shadow: 4px 4px 12px #aaaa;
+    text-align: center;
+  }
+  .card img {
+    width: 100%;
+    height: 130px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+  .card div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    height: 50%;
+  }
+  .card h1 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  .card h2 {
+    font-size: .9rem;
+    color: #aaaa;
+  }
+  .card button {
+    background-color: #2192FF;
+    height: 30px;
+    border: none;
+    padding: 4px;
+    width: 80%;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 4px;
+  }
+  .card button:hover {
+    background-color: #137de8;
+    cursor: pointer;
+  }
+
+/*+++++++++++++++++++++++++++++++*/
+.ParteSobre{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.parteSobreDrentoDaUm{
+    width: 97%;
+    height: 400px;
+    background-color: #e5a7da;
+    border-radius: 50px;
+    display: flex   ;
+    margin-top: 20px;
+}
+.informacoesParteSobre{
+    width: 50%;
+    height: 100px;
+    color: #fff;
+    padding-left: 50px;
+    padding-top: 20px;
+}
+.partedeAlgunsDetalhes{
+    width: 50%;
+    height: 400px;
+}
+.partedentrodaDiv{
+    color: #FFF;
+    font-size: 20px;
+    padding-right: 50px;
+    padding-top: 40px;
+}
+.SobreNosTitle{
+    font-size: 50px;
+    padding-top: 20px;
+}
+.SobreNosTexto{
+    font-size: 20px;
+    text-align: justify;
+    padding-right: 50px;
+}
+/*+++++++++++++++++++++++++++++*/ 
+
+.ParteContato{
+    width: 100%;
+    height: 350px;
+}
+
+
+    .midia1{
+        width: 50%;
+        height: 350px;
+        float: left;
+        background-color: #e5a7da;/*#F6E2F3*/
+        color: #fff;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 65px;
+    }
+    .siga{
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        margin-top: 70px;
+    }
+    .midia2{
+        width: 50%;
+        height: 350px;
+        display: flex;
+        float: left;
+        background-color: #e5a7da;/*#eec4e7*/
+        align-items: center;
+        justify-content: center;
+    }
+    .LogoInstagram{
+        width: 90px;
+        height: 90px;
+        display: flex;
+        margin-right: 100px;
+        cursor: pointer;
+    }
+    .AumentaTamanho:hover{
+        transition: 1.0s;
+        transform: scale(1.2);
+    }
+    .LogoFecebook{
+        display: flex;
+        width: 90px;
+        height: 90px;
+    }
+    .LogoWhatsapp{
+        display: flex;
+        width: 90px;
+        height: 90px;
+        margin-left: 100px;
+    }
+
+
+
+
+
+
+/*+++++++++++++++++++++++++++++*/
+.barrabranca2{
+    width: 100%;
+    height: 20px;
+    background-color: #fff;
+}
+.ParteQuePagaTodaMapa{
+    
+    height: 500px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.prteQuePegaOsmapase{
+    width: 97%;
+    height: 500px;
+    background-color: #e5a7da;
+}
+.MapsLocalização{
+    display: flex;
+}
+.ParteVenhaNosVisitar{
+    width: 100%;
+    height: 100px;
+    background-color: #fff;
+}
+.VenhaNosVistitarP{
+    font-size: 50px;
+    
+    padding-left: 110px;
+   
+
+}
+.parteMapaSemEcrita{
+    width: 50%;
+    height: 500px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: #fff;
+}
+.parteMapsComEcreita{
+    width: 50%;
+    height: 500px;
+    background-color: #fff;
+}
+/***************************************/
+.ParteMapa{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.parteMapaDrentoDaUm{
+    width: 97%;
+    height: 600px;
+    background-color: #e5a7da;
+    border-radius: 50px;
+    display: flex;
+}
+.MapaParte1{
+    width: 50%;
+    height: 100px;
+    color: #fff;
+    padding-left: 50px;
+    padding-top: 20px;
+}
+.vahanosvistua{
+    
+    font-size: 50px;
+    padding-top: 10PX;
+    padding-left: 10PX;
+}
+.mapasalao{
+    padding-left: 10PX;
+    padding-top: 30PX;
+    border-radius: 20px;
+    
+}
+.MapaParte2{
+    width: 50%;
+    height: 400px;
+}
+.oiiooioi{
+    padding-left: 70px;
+    padding-top: 150px;
+    color: #FFF;
+    font-size: 20px;
+}
+
+
+/*+++++++++++++++++++++++++++++++++*/
+.barraFinal{
+    width: 100%;
+    height: 200px;
+    background-color:#e5a7da ;
+    display: flex;
+    color: #FFF;
+}
+.TodosOsDireitosReservados{
+    width: 33%;
+    color: #fff;
+    padding-top: 5px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.NomesCriadores{
+    width: 33%;
+    padding-left: 30px;
+    padding-top: 20px;
+}
+.AcessoAdm{
+    width: 33%;
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+    padding-left: 100px;
+    padding-top: 20px;
+}
+.AcessoAdm a{
+    text-decoration: none;
+    color: #FFF;
+}
+

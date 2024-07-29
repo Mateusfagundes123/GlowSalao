@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salão Glow - Histórico de Agendamentos</title>
+    <link rel="stylesheet" href="../CSS/CssSalão.css">
+    <link rel="icon" href="../Img/lotus.png" type="image/png">
+    
+       
+</head>
+<body>
+
+    <div class="planner">
+        <h1>Histórico de Agendamento - Salão Glow</h1>
+        <div id="calendar" class="calendar-grid"></div>
+    </div>
+
+    <button type="submit"> <a class="add-appointment-btn" href="../HTML/AdmIndex.html">Página Inicial</a></button>
+
+    <div id="addAppointmentModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAddAppointmentModal()">&times;</span>
+            <h2>Adicionar Consulta</h2>
+            <input type="date" id="appointment-date">
+            <input type="text" id="appointment-details" placeholder="Detalhes da Consulta" autocomplete="off">
+            <button onclick="addAppointment()">Adicionar Consulta</button>
+        </div>
+    </div>
+    <select id="month-selector" onchange="changeCalendar()">
+        <option value="0">Janeiro</option>
+        <option value="1">Fevereiro</option>
+        <option value="2">Março</option>
+        <option value="3">Abril</option>
+        <option value="4">Maio</option>
+        <option value="5">Junho</option>
+        <option value="6">Julho</option>
+        <option value="7">Agosto</option>
+        <option value="8">Setembro</option>
+        <option value="9">Outubro</option>
+        <option value="10">Novembro</option>
+        <option value="11">Dezembro</option>
+    </select>
+    
+    <script>
+       
+ 
+       const appointments = {
+            "2024-08-02": ["Penteado-Joana"],
+            "2024-08-07": ["Escova-Maria"],
+            "2024-08-03": ["Penteado-Valentina"],
+            "2024-08-14": ["Penteado Glow-Glória"],
+            "2024-08-14": ["Penteado Glow-Glória"],
+            "2024-08-23": ["Penteado-Maria Jesus"],
+            "2024-08-030": ["Escova-Rafaela"],
+            "2024-08-01": ["Escova-Carolina"],
+            "2024-08-025": ["Penteado-Simone"],
+            "2024-8-17": ["Escova-Eloá"],
+            "2024-08-13": ["Penteado-Cheila"],
+            "2024-08-24": ["Penteado Glow-Mariana"],
+            "2024-08-3": ["Penteado-Éricka"],
+            "2024-08-020": ["Escova-Marianne"],
+            "2024-08-010": ["Escova-Sérgia"],
+            "2024-08-16": ["Penteado Glow-Anazilda"],
+            "2024-08-28": ["Penteado-Analice"],
+            "2024-08-031": ["Escova-Isadir"],
+            "2024-08-3": ["Escova-Aline"],
+            "2024-08-015": ["Penteado-Jamile"],
+            "2024-08-19": ["Escova-Antonia"],
+            "2024-08-12": ["Penteado-Antonieta"],
+            "2024-08-14": ["Penteado Glow-Denise"],
+            "2024-08-22": ["Penteado-Leti"],
+            "2024-08-17": ["Escova-Ana Julia"],
+            "2024-08-08": ["Escova-Julia"],
+            "2024-08-8": ["Penteado-Brenda"],
+            "2024-08-21": ["Escova-Julinhadadz7"],
+            "2024-08-5": ["Escova-Jaira"],
+            "2024-08-19": ["Penteado-Larissa"],
+            "2024-08-18": ["Escova-Juliane"],
+            "2024-08-16": ["Penteado-Ana Alice"],
+            "2024-08-1": ["Penteado Glow-Alice"],
+            "2024-08-12": ["Penteado-Beatriz"],
+            "2024-08-27": ["Escova-Eli"],
+            "2024-08-28": ["Escova-Jovane"],
+            "2024-07-02": ["Penteado-Joana"],
+            "2024-07-07": ["Escova-Maria"],
+            "2024-07-03": ["Penteado-Valentina"],
+            "2024-07-14": ["Penteado Glow-Glória"],
+            "2024-07-23": ["Penteado-Maria Jesus"],
+            "2024-07-030": ["Escova-Rafaela"],
+            "2024-07-01": ["Escova-Carolina"],
+            "2024-07-025": ["Penteado-Simone"],
+            "2024-7-17": ["Escova-Eloá"],
+            "2024-07-13": ["Penteado-Cheila"],
+            "2024-07-24": ["Penteado Glow-Mariana"],
+            "2024-07-3": ["Penteado-Éricka"],
+            "2024-07-020": ["Escova-Marianne"],
+            "2024-07-010": ["Escova-Sérgia"],
+            "2024-07-16": ["Penteado Glow-Anazilda"],
+            "2024-07-28": ["Penteado-Analice"],
+            "2024-07-031": ["Escova-Isadir"],
+            "2024-07-3": ["Escova-Aline"],
+            "2024-07-015": ["Penteado-Jamile"],
+            "2024-07-19": ["Escova-Antonia"],
+            "2024-07-12": ["Penteado-Antonieta"],
+            "2024-07-14": ["Penteado Glow-Denise"],
+            "2024-07-22": ["Penteado-Leti"],
+            "2024-07-17": ["Escova-Ana Julia"],
+            "2024-07-08": ["Escova-Julia"],
+            "2024-07-8": ["Penteado-Brenda"],
+            "2024-07-21": ["Escova-Julinhadadz7"],
+            "2024-07-5": ["Escova-Jaira"],
+            "2024-07-19": ["Penteado-Larissa"],
+            "2024-07-18": ["Escova-Juliane"],
+            "2024-07-16": ["Penteado-Ana Alice"],
+            "2024-07-1": ["Penteado Glow-Alice"],
+            "2024-07-12": ["Penteado-Beatriz"],
+            "2024-07-27": ["Escova-Eli"],
+            "2024-07-28": ["Escova-Jovane"]
+        };
+        
+        window.onload = function () {
+            generateCalendar();
+        };
+
+        
+        function generateCalendar() {
+            const calendar = document.getElementById('calendar');
+
+          
+            calendar.innerHTML = '';
+
+           
+            const currentDate = new Date();
+            const currentYear = currentDate.getFullYear();
+            const currentMonth = currentDate.getMonth();
+
+            
+            const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+          
+            for (let i = 1; i <= daysInMonth; i++) {
+                const dayElement = document.createElement('div');
+                dayElement.classList.add('calendar-day');
+                dayElement.textContent = i;
+
+                
+                const currentDateStr = `${currentYear}-${(currentMonth + 1).toString().padStart(2, '0')}-${i.toString().padStart(2, '0')}`;
+                if (appointments[currentDateStr]) {
+                    appointments[currentDateStr].forEach(consultation => {
+                        const appointmentDescription = document.createElement('p');
+                        appointmentDescription.textContent = consultation;
+                        dayElement.appendChild(appointmentDescription);
+                    });
+                }
+
+             
+                dayElement.addEventListener('click', function () {
+                    const selectedDate = new Date(currentYear, currentMonth, i);
+                    showAddAppointmentModal(selectedDate);
+                });
+
+                calendar.appendChild(dayElement);
+            }
+        }
+
+        function showAddAppointmentModal(date) {
+            const modal = document.getElementById('addAppointmentModal');
+            modal.style.display = 'block';
+
+           
+            if (date) {
+                const formattedDate = date.toISOString().split('T')[0];
+                document.getElementById('appointment-date').value = formattedDate;
+            }
+        }
+
+        function closeAddAppointmentModal() {
+            const modal = document.getElementById('addAppointmentModal');
+            modal.style.display = 'none';
+        }
+
+        function addAppointment() {
+            const date = document.getElementById('appointment-date').value;
+            const details = document.getElementById('appointment-details').value;
+
+       
+            if (appointments[date]) {
+               
+                appointments[date].push(details);
+            } else {
+                
+                appointments[date] = [details];
+            }
+
+           
+            closeAddAppointmentModal();
+
+           
+            generateCalendar();
+        }
+    </script>
+</body>
+</html>
+

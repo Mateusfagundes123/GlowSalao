@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../CSS/PaginaCadastrServiços_Salão.css">
+    <link rel="icon" href="../Img/lotus.png" type="image/png">
+    <title>Cadastre o serviço</title>
+</head>
+
+<body>
+    <div id="menu">
+        <ul>
+            <li><a href="../HTML/AdmIndex.html">Home</a></li>
+        </ul>
+    </div>
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form>
+                <h1>Cadastro de serviços e combos</h1>
+                <span>Insira os dados</span>
+                <input type="text" placeholder="Insira o nome do combo ou serviço a ser ofertado.">
+                <span>Insira a data de disponibilidade do combo ou serviço.</span>
+                <input type="date" placeholde>
+                <input type="text" placeholder="Faça uma breve descrição do combo ou serviço.">
+                <input type="text" placeholder="Insira o valor do combo ou serviço.">
+                <span>Insira uma imagem referente à esse combo ou serviço</span>
+                <br>
+                <label for="arquivo" class="custom-file-upload">
+                    <i class="fas fa-upload"></i> Escolha um arquivo
+                </label>
+                <input type="file" name="arquivo" id="arquivo" accept=".pdf, .doc, .docx, .jpg" style="display:none;"
+                    onchange="mostrarNomeArquivo(this)">
+                <div id="nomeArquivoSelecionado" class="nome-arquivo" style="display:none;"></div>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function mostrarNomeArquivo(input) {
+            const nomeArquivo = document.getElementById('nomeArquivoSelecionado');
+            if (input.files && input.files.length > 0) {
+                nomeArquivo.textContent = input.files[0].name;
+                nomeArquivo.style.display = 'block';
+            } else {
+                nomeArquivo.textContent = '';
+                nomeArquivo.style.display = 'none';
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../CSS/CadFunc.css">
+    <link rel="icon" href="../Img/lotus.png" type="image/png">
+    <title>Cadastro de funcionários</title>
+</head>
+
+
+<body>
+
+
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+           
+            <form>
+                <h1>Cadastro de Funcionários</h1>
+               
+                <span>Faça o cadastro</span>
+                <input type="text" placeholder="Nome Completo">
+                <input type="text" placeholder="CPF">
+                <input type="date" placeholder="Data de Nascimento">
+                <input type="email" placeholder="Email">
+                <input type="text" placeholder="Telefone">
+                <input type="text" placeholder="Bairro">
+                <input type="text" placeholder="Rua">
+                <input type="text" placeholder="Número">
+                <input type="password" placeholder="Senha">
+                <select required>
+                    <option value="" disabled selected>Selecione a Escolaridade</option>
+                    <option value="1">Ensino Fundamental Incompleto</option>
+                    <option value="2">Ensino Fundamental Completo</option>
+                    <option value="3">Ensino Médio Incompleto</option>
+                    <option value="4">Ensino Médio Completo</option>
+                    <option value="4">Ensino Superior Incompleto</option>
+                    <option value="4">Ensino Superior Completo</option>
+                    <option value="4">Pós-Graduação</option>
+                </select>
+                <div class="admissao-container">
+                    <span>Data de admissão</span>
+                    <input type="date" placeholder="Data de Admissão">
+                </div>
+                <div class="certificados-container">
+                    <span class="certificados">Certificados</span>
+                    <label for="arquivo" class="custom-file-upload">
+                        <i class="fas fa-upload"></i> Escolha um arquivo
+                    </label>
+                    <span id="nomeArquivoSelecionado" class="nome-arquivo" style="display:none;"></span>
+                    <input type="file" name="arquivo" id="arquivo" accept=".pdf, .doc, .docx" style="display:none;" onchange="mostrarNomeArquivo(this)">
+                </div>
+                <div id="nomeArquivoSelecionado" class="nome-arquivo" style="display:none;"></div>
+                
+                <button>Enviar</button>
+            </form>
+        </div>
+        <div class="BotaoVoltar" >
+            <a href="../HTML/AdmIndex.html">
+                <img src="../Img/botao-voltar.png" alt="Botão Voltar">
+            </a>
+        </div>
+    </div>
+   <script>
+    function mostrarNomeArquivo(input) {
+        const nomeArquivo = document.getElementById('nomeArquivoSelecionado');
+        if (input.files && input.files.length > 0) {
+            nomeArquivo.textContent = input.files[0].name;
+            nomeArquivo.style.display = 'inline-block';
+        } else {
+            nomeArquivo.textContent = '';
+            nomeArquivo.style.display = 'none';
+        }
+    }
+    
+</script>
+</body>
+
+
+</html>

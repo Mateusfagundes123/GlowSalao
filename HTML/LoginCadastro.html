@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../CSS/LoginCadastrar.css">
+    <link rel="icon" href="../Img/lotus.png" type="image/png">
+    <title>Login/Cadastro</title>
+</head>
+
+<body>
+
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            
+            <form>
+                <h1>Crie sua conta</h1>
+                
+                <span>Faça seu cadastro</span>
+                <input type="text" placeholder="Nome Completo">
+                <input type="text" placeholder="CPF">
+                <input type="date" id="dataNascimento" placeholder="Data de Nascimento">
+                <input type="email" placeholder="Email">
+                <input type="text" placeholder="Telefone">
+                <input type="text" placeholder="Bairro">
+                <input type="text" placeholder="Rua">
+                <input type="text" placeholder="Número">
+                <input type="password" placeholder="Senha">
+
+                <button onclick="calcularIdade()">Enviar</button>
+            </form>
+        </div>
+        <div class="BotaoVoltar">
+            <a href="../HTML/index.html">
+                <img src="../Img/botao-voltar.png" alt="Botão Voltar">
+            </a>
+        </div>
+        <div class="form-container sign-in">
+            <form>
+                <h1>Entrar</h1>
+                
+                <span>Email e senha para ter acesso</span>
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Senha">
+                <a class="colorBlack" href="#" onclick="EsqueceuSenha()">Esqueceu sua senha?</a>
+                <button><a class="colorWhite" href="../HTML/InSite.html">Entrar</a></button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Bem-vindo de volta!</h1>
+                    <p>Insira seus dados pessoais para usar todos os recursos do site</p>
+                    <button class="hidden" id="login">Entrar</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Seja bem-vinda!</h1>
+                    <p>Registre-se com seus dados pessoais para usar todos os recursos do site</p>
+                    <button class="hidden" id="register">Cadastre-se</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="../JS/LoginCadastrar.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glow Escova Inteligente</title>
+    <link rel="stylesheet" href="EstiloPlanilha.css">
+    <link rel="icon" href="../Img/lotus.png" type="image/png">
+    <style>
+        .tabelaAgendamentos {
+            margin: 0 auto; 
+            font-size: 24px; 
+            border-collapse: collapse;
+            width: 100%; 
+        }
+        .tabelaAgendamentos th, .tabelaAgendamentos td {
+            border: 2px solid black; 
+            padding: 8px; 
+        }
+        .titulo {
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            display: flex;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px; 
+        }
+        .cabecalho {
+            border-radius: 10px; 
+            background-color: #e5a7da;
+        }
+        .linhas {
+            background-color: #f6e2f3;
+        }
+        .BotaoVoltar {
+            z-index: 9999;
+            position: fixed;
+            padding: 32px;
+            margin-top: -495px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="titulo">Planilha Agendamentos - colaboradores</h1>
+    <table class="tabelaAgendamentos">
+        <thead>
+            <tr class="cabecalho">
+                <th>Nome do cliente</th>
+                <th>Nome do serviço</th>
+                <th>Valor</th>
+                <th>Data</th>
+                <th>Horário</th>
+                <th>Observações</th>
+                <th>Opções</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="linhas">
+                <td>Maria Terezinha</td>
+                <td>Escova progressiva</td>
+                <td>R$40,00</td>
+                <td>11/05/2024</td>
+                <td>09:00</td>
+                <td>Talvez chegarei 10 minutinhos atrasada</td>
+                <td><img src = "../Img/ferramenta-lapis.png" width="20px"> <a href="../HTML/Exclusão.html"><img src = "../Img/lixeira.png" width="20px"></a></td>
+            </tr>
+            <tr>
+                <td>Julioli Nunes Lilith</td>
+                <td>Penteado glow</td>
+                <td>R$85,00</td>
+                <td>13/05/2024</td>
+                <td>17:00</td>
+                <td>Sem observações</td>
+                <td>
+                    <a href="../HTML/editarserviço.html"><img src = "../Img/ferramenta-lapis.png" width="20px"> <img src = "../Img/lixeira.png" width="20px"></a></td>
+            </tr>
+            <tr class="linhas">
+                <td>Rafaela Rossa</td>
+                <td>Penteado</td>
+                <td>R$55,00</td>
+                <td>14/05/2024</td>
+                <td>08:00</td>
+                <td>Sem observações</td>
+                <td><a href="../Editar Agendamento/editarserviço.html"><img src = "../Img/ferramenta-lapis.png" width="20px"> </a> <img src = "../Img/lixeira.png" width="20px"></td>
+            </tr>
+            <tr>
+                <td>Dona Florinda</td>
+                <td>Escova progressiva</td>
+                <td>R$40,00</td>
+                <td>16/05/2024</td>
+                <td>17:50</td>
+                <td>Tenho alergia a determinados produtos...</td>
+                <td><img src = "../Img/ferramenta-lapis.png" width="20px"> <img src = "../Img/lixeira.png" width="20px"></td>
+            </tr>
+            <tr class="linhas">
+                <td>Marcia Nunes</td>
+                <td>Escova progressiva</td>
+                <td>R$40,00</td>
+                <td>16/05/2024</td>
+                <td>15:00</td>
+                <td>Sem observações</td>
+              <td><img src = "../Img/ferramenta-lapis.png" width="20px"> <img src = "../Img/lixeira.png" width="20px"></td>
+            </tr>
+            <tr>
+                <td>Sandrinha Castro</td>
+                <td>Escova progressiva</td>
+                <td>R$40,00</td>
+                <td>17/05/2024</td>
+                <td>15:00</td>
+                <td>Sem observações</td>
+               <td><img src = "../Img/ferramenta-lapis.png" width="20px"> <img src = "../Img/lixeira.png" width="20px"></td>
+            </tr>
+            <tr class="linhas">
+                <td>Bruna Escolvilski</td>
+                <td>Penteado</td>
+                <td>R$55,00</td>
+                <td>17/05/2024</td>
+                <td>17:00</td>
+                <td>Sem observações</td>
+             <td><img src = "../Img/ferramenta-lapis.png" width="20px"> <img src = "../Img/lixeira.png" width="20px"></td>
+            </tr>
+            <tr>
+                <td>Aurora Sadia</td>
+                <td>Escova progressiva</td>
+                <td>R$40,00</td>
+                <td>18/05/2024</td>
+                <td>10:00</td>
+                <td>Sem observações</td>
+                <td><img src = "../Img/ferramenta-lapis.png" width="20px"> <img src = "../Img/lixeira.png" width="20px"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="BotaoVoltar">
+        <a href="../HTML/AdmIndex.html">
+            <img src="../Img/botao-voltar.png" alt="Botão Voltar" width="24px">
+        </a>
+    </div>
+</body>
+</html>

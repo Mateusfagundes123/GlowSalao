@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salão Glow - Histórico de Agendamentos</title>
+    <link rel="stylesheet" href="../CSS/CssSalão.css">
+    <link rel="icon" href="../Img/lotus.png" type="image/png">
+</head>
+<body>
+   
+        <a CLASS="BotaoVoltar" href="../HTML/InSite.html">
+            <img src="../Img/botao-voltarBranco.png" alt="Botão Voltar" width="24px">
+        </a>
+
+    <div class="planner">
+        <h1>Histórico de Agendamentos - Salão Glow</h1>
+        <div id="calendar" class="calendar-grid"></div>
+    </div>
+  
+    <button class="load-more-btn" onclick="loadMoreDays()">Carregar Mais Dias</button>
+    <div id="addAppointmentModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAddAppointmentModal()">&times;</span>
+            <h2>Adicionar Consulta</h2>
+            <input type="date" id="appointment-date">
+            <input type="text" id="appointment-details" placeholder="Detalhes da Consulta" autocomplete="off">
+            <button onclick="addAppointment()">Adicionar Consulta</button>
+        </div>
+    </div>
+    <script>
+        const appointments = {
+            "2024-05-02": ["Penteado-Leticia"],
+            "2024-05-07": ["Escova-Ana"]
+        };
+
+        let currentDate = new Date();
+        let daysLoaded = 0;
+        const daysPerLoad = 30;
+
+        window.onload = function () {
+            generateCalendar();
+        };
+
+        function generateCalendar() {
+            const calendar = document.getElementById('calendar');
+            const monthNames = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+
+            for (let i = 0; i < daysPerLoad; i++) {
+                const dayDate = new Date(currentDate);
+                dayDate.setDate(currentDate.getDate() + daysLoaded + i);
+
+                const dayElement = document.createElement('div');
+                dayElement.classList.add('calendar-day');
+                dayElement.textContent = `${dayDate.getDate()} ${monthNames[dayDate.getMonth()]}`;
+
+                const currentDateStr = dayDate.toISOString().split('T')[0];
+                if (appointments[currentDateStr]) {
+                    appointments[currentDateStr].forEach(consultation => {
+                        const appointmentDescription = document.createElement('p');
+                        appointmentDescription.textContent = consultation;
+                        dayElement.appendChild(appointmentDescription);
+                    });
+                }
+
+                dayElement.addEventListener('click', function () {
+                    showAddAppointmentModal(dayDate);
+                });
+
+                calendar.appendChild(dayElement);
+            }
+
+            daysLoaded += daysPerLoad;
+        }
+
+        function loadMoreDays() {
+            generateCalendar();
+        }
+
+        function showAddAppointmentModal(date) {
+            const modal = document.getElementById('addAppointmentModal');
+            modal.style.display = 'block';
+
+            if (date) {
+                const formattedDate = new Date(date.getTime() - (date.getTimezoneOffset() * 60000)).toISOString().split('T')[0];
+                document.getElementById('appointment-date').value = formattedDate;
+            }
+        }
+
+        function closeAddAppointmentModal() {
+            const modal = document.getElementById('addAppointmentModal');
+            modal.style.display = 'none';
+        }
+
+        function addAppointment() {
+            const date = document.getElementById('appointment-date').value;
+            const details = document.getElementById('appointment-details').value;
+
+            if (appointments[date]) {
+                appointments[date].push(details);
+            } else {
+                appointments[date] = [details];
+            }
+
+            closeAddAppointmentModal();
+            document.getElementById('calendar').innerHTML = '';
+            daysLoaded = 0;
+            generateCalendar();
+        }
+    </script>
+</body>
+</html>

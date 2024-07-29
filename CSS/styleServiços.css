@@ -1,0 +1,87 @@
+body {
+    height: 2000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 16px;
+    background-color: #aaaa;
+}
+#menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #e5a7da;
+}
+
+ul {
+    list-style: none;
+    align-items: center;
+    margin: 0;
+    height: 100%;
+    display: flex;
+}
+a {
+    color: white;
+}
+li {
+    margin-right: 20px;
+    font-size: 30px;
+}
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap:16px;
+    background-image: url("tricodando.png")
+  }
+  .card {
+    background-color: #f7e1e1;
+    width: 250px;
+    height: 340px;
+    border-radius: 12px;
+    box-shadow: 4px 4px 12px #000000aa;
+    text-align: center;
+  }
+  .card img {
+    width: 100%;
+    height: 130px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+  .card div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    height: 50%;
+  }
+  .card h1 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  .card h2 {
+    font-size: .9rem;
+    color: #424141aa;
+  }
+  .card button {
+    background-color: #2192FF;
+    height: 30px;
+    border: none;
+    padding: 4px;
+    width: 80%;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 4px;
+  }
+  .card button:hover {
+    background-color: #137de8;
+    cursor: pointer;
+  }
+

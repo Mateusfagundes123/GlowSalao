@@ -1,0 +1,127 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <style>
+    input[type=text], select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    
+    h1 {
+      display: flex;
+      align-self: center;
+      justify-content: center;
+    }
+
+    input[type=submit] {
+      width: 100%;
+      background-color: #e5a7da;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    input[type=submit]:hover {
+      background-color: #e5a7da;
+    }
+    
+    div {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+    #customers {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    #customers td, #customers th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    
+    #customers tr:nth-child(even){background-color: #f2f2f2;}
+    
+    #customers tr:hover {background-color: #ddd;}
+    
+    #customers th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #e5a7da;
+      color: white;
+    }
+
+    .BotaoVoltar {
+      z-index: 9999;
+      position: fixed;
+      padding: 20px;
+      background-color:white
+      
+  }
+
+    .image {
+      margin-left: 50px;
+      margin-right: 20px;
+    }
+    </style>
+    </head>
+    <body>
+
+      <div class="BotaoVoltar">
+        <a href="../HTML/ConsultaFuncionarios.html">
+            <img src="../Img/botao-voltar.png" alt="Botão Voltar">
+        </a>
+    </div>
+    <br>
+    <h1>Relatório de Clientes ou Funcionários</h1>
+    <br>
+    <div>
+      <form action="">
+            <input type="radio" name="turno" value="manha" required> Funcionário
+            <input type="radio" name="turno" value="tarde" required> Cliente<br>
+        <br>
+
+        <label for="fname">CPF</label>
+        <input type="text" id="fname" name="firstname" placeholder="Digite somente os numeros Ex: 00000000000">
+    
+        <label for="lname">Nome</label>
+        <input type="text" id="lname" name="lastname" placeholder="Ex: Belzebo da Silva">
+        
+      <div>
+        <a href="">
+        <input type="submit" value="Consultar">
+      </a>
+      </div>
+      </form>
+    </div>
+    
+    <table id="customers">
+      <tbody><tr>
+        <th>CPF</th>
+        <th>Nome</th>
+        <th>Endereço</th>
+        <th>Opções</th>
+      </tr>
+      <tr>
+        <td>123456778-78</td>
+        <td>Edward Mãos de Tesoura </td>
+        <td>Rua Das Maravilhas 477 Chapecó SC - 88067456</td>
+        <td> <img src="../Img/ferramenta-lapis.png" width="20px"> 
+        <img id="image" src="../Img/lixeira.png" width="20px"></td>
+      </tr>
+     
+    </tbody></table>
+    
+    
+    
+    
+    
+    </body></html>

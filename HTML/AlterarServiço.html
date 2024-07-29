@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="PaginaCadastrServiços_Salão.css">
+    <link rel="stylesheet" href="../CSS/AlterarServiço.css">
+    <link rel="icon" href="../Img/lotus.png" type="image/png">
+    <title>Cadastre o serviço</title>
+    <style>
+        .delete-icon {
+            cursor: pointer;
+            color: red;
+            font-size: 24px;
+            margin-left: 10px;
+            vertical-align: middle;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="menu">
+        <ul>
+            <li><a href="../HTML/Serviços.html">
+                <img src="../Img/botao-voltarBranco.png" alt="Botão Voltar" width="24px">
+            </a></li>
+            <li><a href="../HTML/AdmIndex.html">Home</a></li>
+        </ul>
+    </div>
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form>
+                <h1>ㅤㅤㅤAlterar Serviço ou Combo</h1>
+                <span>Insira os dados</span>
+                <input type="text" placeholder="Insira o nome do combo ou serviço a ser ofertado.">
+                <span>Insira a data de disponibilidade do combo ou serviço.</span>
+                <input type="date">
+                <input type="text" placeholder="Faça uma breve descrição do combo ou serviço.">
+                <input type="text" placeholder="Insira o valor do combo ou serviço.">
+                <span>Insira uma imagem referente à esse combo ou serviço</span>
+                <br>
+                <label for="arquivo" class="custom-file-upload">
+                    <i class="fas fa-upload"></i> Escolha um arquivo
+                </label>
+                <input type="file" name="arquivo" id="arquivo" accept=".pdf, .doc, .docx, .jpg" style="display:none;" onchange="mostrarNomeArquivo(this)">
+                <div id="nomeArquivoSelecionado" class="nome-arquivo" style="display:none;"></div>
+                <button type="submit">Enviar</button>
+                <i class="fas fa-trash delete-icon" id="deleteIcon" onclick="excluirFormulario()"></i>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function mostrarNomeArquivo(input) {
+            const nomeArquivo = document.getElementById('nomeArquivoSelecionado');
+            if (input.files && input.files.length > 0) {
+                nomeArquivo.textContent = input.files[0].name;
+                nomeArquivo.style.display = 'block';
+            } else {
+                nomeArquivo.textContent = '';
+                nomeArquivo.style.display = 'none';
+            }
+        }
+
+        function excluirFormulario() {
+            const inputs = document.querySelectorAll('input[type="text"], input[type="date"], input[type="file"]');
+            const spans = document.querySelectorAll('form span');
+            inputs.forEach(input => {
+                input.value = '';
+            });
+            const nomeArquivo = document.getElementById('nomeArquivoSelecionado');
+            nomeArquivo.textContent = '';
+            nomeArquivo.style.display = 'none';
+            spans.forEach(span => {
+                span.style.display = 'none';
+            });
+        }
+    </script>
+
+</body>
+
+</html>
